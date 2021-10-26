@@ -1,15 +1,7 @@
 <?php
-$servername = "localhost";
-$database = "handmade";
-$username = "root";
-$password = "";
-$conn = mysqli_connect($servername, $username, $password, $database);
-mysqli_select_db($conn, $database);
-mysqli_set_charset($conn, 'UTF8');
 
-// Check connection
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
+$Connect = pg_connect("postgres://ypckzzwuxfbsaq:1ea06ede567cfc723c5b6ba6858fd79353b15749ce7b304cc39a75fea2271d94@ec2-54-205-232-84.compute-1.amazonaws.com:5432/d87b6rn5h9kq45");
+if (!$Connect) {
+        die("Connection failed");
+    }
 ?>
