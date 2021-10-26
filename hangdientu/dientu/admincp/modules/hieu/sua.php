@@ -1,5 +1,5 @@
 <?php
-	$sql="select * from hieu where hieu_id=$_GET[id]"; 
+	$PGSQL="select * from hieu where hieu_id=$_GET[id]"; 
 	$hieu=pg_query($PGSQL);
 	$dong=pg_fetch_array($hieu);
 ?>

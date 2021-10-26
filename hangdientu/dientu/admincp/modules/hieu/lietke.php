@@ -1,6 +1,6 @@
 <?php
 	
-	$sql="select * from hieu order by hieu_id asc ";
+	$PGSQL="select * from hieu order by hieu_id asc ";
 	$loai=pg_query($PGSQL);
 ?>
 <table width="268" height="124" border="1">

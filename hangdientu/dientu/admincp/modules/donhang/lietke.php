@@ -1,6 +1,6 @@
 
 <?php
-	$sql="select cart.id,products.product_id,cart_detail.product_id,product_title, fullname,date,cart_id,quantity,price from cart,cart_detail,products where products.product_id=cart_detail.product_id and cart_detail.cart_id=cart.id";
+	$PGSQL="select cart.id,products.product_id,cart_detail.product_id,product_title, fullname,date,cart_id,quantity,price from cart,cart_detail,products where products.product_id=cart_detail.product_id and cart_detail.cart_id=cart.id";
 	$run_cart=pg_query($PGSQL);
 ?>
 <table width="100%" border="1" >
