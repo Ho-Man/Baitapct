@@ -1,14 +1,14 @@
 
 <?php
 	
-	$sql="select * from products ";
-	$sanpham=mysqli_query($conn,$sql);
+	$PGSQL="select * from products ";
+	$sanpham=pg_query($conn,$PGSQL);
 ?>
 <p class="loai">Tất cả sản phẫm</p>
 <ul>
 
 <?php
-while($row=mysqli_fetch_array($sanpham)){
+while($row=pg_fetch_array($sanpham)){
 ?>
              <li><a href="#">
                 <?php

@@ -1,7 +1,7 @@
 <?php
-	$sql="select * from products where product_id=$_GET[id]";
-	$sanpham=mysqli_query($sql);
-	$row=mysqli_fetch_array($sanpham);
+	$PGSQL="select * from products where product_id=$_GET[id]";
+	$sanpham=pg_query($PGSQL);
+	$row=pg_fetch_array($sanpham);
 ?>
 <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
@@ -26,9 +26,9 @@
     <td>
       <select name="product_cat" id="product_cat">
       <?php
-	  		$sql="select * from loai";
-			$cat=mysqli_query($sql);
-			while($dong_cat=mysqli_fetch_array($cat)){
+	  		$PGSQL="select * from loai";
+			$cat=pg_query($PGSQL);
+			while($dong_cat=pg_fetch_array($cat)){
 				if($dong_cat['loai_id']==$row['product_cat']){
 	  ?>	
       				<option value="<?php echo $dong_cat['loai_id'] ?>" selected="selected"><?php echo $dong_cat['tenloai'] ?></option>
@@ -46,9 +46,9 @@
     <td>Product_brand</td>
     <td>  <select name="product_brand" id="product_brand">
       <?php
-	  		$sql="select * from hieu";
-			$hieu=mysqli_query($sql);
-			while($dong=mysqli_fetch_array($hieu)){
+	  		$PGSQL="select * from hieu";
+			$hieu=pg_query($PGSQL);
+			while($dong=pg_fetch_array($hieu)){
 				if($dong['hieu_id']==$row['product_brand']){
 	  ?>	
       				<option value="<?php echo $dong['hieu_id'] ?>" selected="selected"><?php echo $dong['tenhieu'] ?></option>

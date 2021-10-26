@@ -6,18 +6,18 @@
 	if(isset($_POST['them'])){
 		//them
 		
-		$sql="insert into hieu(tenhieu) value('$hieu')";
-		mysqli_query($sql);
+		$PGSQL="insert into hieu(tenhieu) value('$hieu')";
+		pg_query($PGSQL);
 		header('location:../../index.php?quanly=hieu&ac=them');
 	}elseif(isset($_POST['sua'])){
 		//sua
-		$sql="update hieu set tenhieu='$hieu' where hieu_id='$id'";
-		mysqli_query($sql);
+		$PGSQL="update hieu set tenhieu='$hieu' where hieu_id='$id'";
+		pg_query($PGSQL);
 		header('location:../../index.php?quanly=hieu&ac=sua&id='.$id);
 	}else{
 	//xóa
-	$sql="delete from hieu where hieu_id='$id'";
-	mysqli_query($sql);
+	$PGSQL="delete from hieu where hieu_id='$id'";
+	pg_query($PGSQL);
 	header('location:../../index.php?quanly=hieu&ac=them');
 	}
 ?>

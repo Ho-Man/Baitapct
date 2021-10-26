@@ -4,8 +4,8 @@
 		$c_email=$_POST['email'];
 		$c_pass=$_POST['password'];
 		$sel_c="select * from customers where customer_pass='$c_pass' and customer_email='$c_email'";
-		$run_login=mysqli_query($conn,$sel_c);
-		$check_login=mysqli_num_rows($run_login);
+		$run_login=pg_query($conn,$sel_c);
+		$check_login=pg_num_rows($run_login);
 		if($check_login==0){
 			echo '<script>alert("password or email incorrect")</script>';
 		}else{

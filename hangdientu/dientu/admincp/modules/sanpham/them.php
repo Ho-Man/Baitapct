@@ -20,9 +20,9 @@
     <td>
       <select name="product_cat" id="product_cat">
       <?php
-	  		$sql="select * from loai";
-			$loai=mysqli_query($sql);
-			while($dong=mysqli_fetch_array($loai)){
+	  		$PGSQL="select * from loai";
+			$loai=pg_query($PGSQL);
+			while($dong=pg_fetch_array($loai)){
 	  ?>	
       				<option value="<?php echo $dong['loai_id'] ?>"><?php echo $dong['tenloai'] ?></option>
       <?php
@@ -34,9 +34,9 @@
     <td>Product_brand</td>
     <td>  <select name="product_brand" id="product_brand">
       <?php
-	  		$sql="select * from hieu";
-			$hieu=mysqli_query($sql);
-			while($dong=mysqli_fetch_array($hieu)){
+	  		$PGSQL="select * from hieu";
+			$hieu=pg_query($PGSQL);
+			while($dong=pg_fetch_array($hieu)){
 	  ?>	
       				<option value="<?php echo $dong['hieu_id'] ?>"><?php echo $dong['tenhieu'] ?></option>
       <?php

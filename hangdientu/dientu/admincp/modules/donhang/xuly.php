@@ -6,6 +6,6 @@
 		$tam='';
 		}
 		$sql="delete from cart where id='$tam'";
-		mysqli_query($sql);
+		pg_query($PGSQL);
 		header('location:../../index.php?quanly=donhang&ac=lietke');
 ?>

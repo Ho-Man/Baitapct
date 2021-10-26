@@ -3,10 +3,10 @@
 
 		if(isset($_POST['search'])){
 			$timkiem=$_POST['search_query'];
-			$sql="select * from products where product_keywords like '%$timkiem%'";
-			$run_timkiem=mysqli_query($conn,$sql);
+			$PGSQL="select * from products where product_keywords like '%$timkiem%'";
+			$run_timkiem=pg_query($conn,$PGSQL);
 				
-			while($dong_timkiem=mysqli_fetch_array($run_timkiem)){
+			while($dong_timkiem=pg_fetch_array($run_timkiem)){
 			
 
 			

@@ -1,16 +1,16 @@
 <?php
-	$sql="select tenloai,product_image,product_title,product_price,product_id from products,loai where products.product_cat=loai.loai_id and product_cat='$_GET[id]' ";
-	$sql_tenloai="select tenloai from loai where loai_id='$_GET[id]'   ";
-	$tenloai=mysqli_query($conn,$sql_tenloai);
-	$dong_tenloai=mysqli_fetch_array($tenloai);
-	$loai=mysqli_query($conn,$sql);
+	$PGSQL="select tenloai,product_image,product_title,product_price,product_id from products,loai where products.product_cat=loai.loai_id and product_cat='$_GET[id]' ";
+	$PGSQL_tenloai="select tenloai from loai where loai_id='$_GET[id]'   ";
+	$tenloai=pg_query($conn,$PGSQL_tenloai);
+	$dong_tenloai=pg_fetch_array($tenloai);
+	$loai=pg_query($conn,$PGSQL);
 	
 ?>
 <p class="loai"><?php echo $dong_tenloai['tenloai'] ?></p>
 <ul>
 
 	<?php
-	while($dong=mysqli_fetch_array($loai)){
+	while($dong=pg_fetch_array($loai)){
 	?>
              <li><a href="#">
                 	<?php

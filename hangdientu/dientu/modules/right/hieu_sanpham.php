@@ -1,16 +1,16 @@
 <?php
 
-$sql = "select * from products where product_brand='$_GET[id]' ";
-$hieu = mysqli_query($conn, $sql);
-$sql_tenhieu = "select tenhieu from hieu where hieu_id='$_GET[id]'   ";
-$tenhieu = mysqli_query($conn, $sql_tenhieu);
-$dong_tenhieu = mysqli_fetch_array($tenhieu);
+$PGSQL = "select * from products where product_brand='$_GET[id]' ";
+$hieu = pg_query($conn, $PGSQL);
+$PGSQL_tenhieu = "select tenhieu from hieu where hieu_id='$_GET[id]'   ";
+$tenhieu = pg_query($conn, $PGSQL_tenhieu);
+$dong_tenhieu = pg_fetch_array($tenhieu);
 ?>
 <p class="loai"><?php echo $dong_tenhieu['tenhieu'] ?></p>
 <ul>
 
     <?php
-    while ($dong_hieu = mysqli_fetch_array($hieu)) {
+    while ($dong_hieu = pg_fetch_array($hieu)) {
         ?>
         <li><a href="#">
                 <?php

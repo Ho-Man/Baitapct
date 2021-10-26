@@ -6,18 +6,18 @@
 	if(isset($_POST['them'])){
 		//them
 		
-		$sql="insert into loai(tenloai) value('$loai')";
-		mysqli_query($sql);
+		$PGSQL="insert into loai(tenloai) value('$loai')";
+		pg_query($PGSQL);
 		header('location:../../index.php?quanly=loai&ac=them');
 	}elseif(isset($_POST['sua'])){
 		//sua
-		$sql="update loai set tenloai='$loai' where loai_id='$id'";
-		mysqli_query($sql);
+		$PGSQL="update loai set tenloai='$loai' where loai_id='$id'";
+		pg_query($PGSQL);
 		header('location:../../index.php?quanly=loai&ac=sua&id='.$id);
 	}else{
 	//xóa
-	$sql="delete from loai where loai_id='$id'";
-	mysqli_query($sql);
+	$PGSQL="delete from loai where loai_id='$id'";
+	pg_query($PGSQL);
 	header('location:../../index.php?quanly=loai&ac=them');
 	}
 ?>

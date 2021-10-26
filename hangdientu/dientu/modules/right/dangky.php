@@ -9,7 +9,7 @@ if (isset($_POST['register'])) {
     $c_address = $_POST['c_address'];
     /*move_uploaded_file($c_image_tmp, "modules/right/customer_images/$c_image");*/
     $insert_c = "insert into customers(customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address) values('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address')";
-    $run_c = mysqli_query($conn, $insert_c);
+    $run_c = pg_query($conn, $insert_c);
     if ($run_c) {
         echo '<script>alert("insert thanh cong")</script>';
 

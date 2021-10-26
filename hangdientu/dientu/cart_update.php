@@ -9,8 +9,8 @@
 			echo '<script>alert("nho hon 10 san pham")</script>';
 			echo '<a href="'.$return_url.'">Back</a>';
 		}
-		$sql="select product_image,product_price,product_title from products where product_id='$product_id' limit 1";
-		$run_pro=pg_query($conn,$sql);
+		$PGSQL="select product_image,product_price,product_title from products where product_id='$product_id' limit 1";
+		$run_pro=pg_query($conn,$PGSQL);
 		$row_pro=pg_fetch_array($run_pro);
 		if($row_pro){
 			$new_pro=array(array('image'=>$row_pro['product_image'],'name'=>$row_pro['product_title'],'id'=>$product_id,'qty'=>$product_qty,'price'=>$row_pro['product_price']));

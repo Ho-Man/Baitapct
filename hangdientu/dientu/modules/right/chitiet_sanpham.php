@@ -1,7 +1,7 @@
 <?php
-$sql = "select * from products where product_id=$_GET[id]";
-$chitiet = mysqli_query($conn, $sql);
-$row_chitiet = mysqli_fetch_array($chitiet);
+$PGSQL = "select * from products where product_id=$_GET[id]";
+$chitiet =pg_query($conn, $PGSQL);
+$row_chitiet = pg_fetch_array($chitiet);
 
 ?>
 
@@ -45,8 +45,8 @@ if (isset($_POST['binhluan'])) {
     $comment_length = strlen($comment);
     if ($name_length > 0 && $comment_length > 0) {
 
-        $sql = "insert into comment (id_sanpham,name,comment) values('$id','$name','$comment')  ";
-        mysqli_query($conn, $sql);
+        $PGSQL = "insert into comment (id_sanpham,name,comment) values('$id','$name','$comment')  ";
+        pg_query($conn, $PGSQL);
     } else {
         echo 'Làm ơn điền đầy đủ thông tin';
     }
@@ -82,8 +82,8 @@ if (isset($_POST['binhluan'])) {
 </form>
 <?php
 $fine_comment = "select name,comment,id_sanpham,product_id,date from comment,products where id_sanpham=$_GET[id] and products.product_id=comment.id_sanpham order by id desc";
-$ketqua_comment = mysqli_query($conn, $fine_comment);
-while ($dong_comment = mysqli_fetch_array($ketqua_comment)) {
+$ketqua_comment = pg_query($conn, $fine_comment);
+while ($dong_comment = pg_fetch_array($ketqua_comment)) {
     $comment_name = $dong_comment['name'];
     $comment = $dong_comment['comment'];
     echo '<p  style="border-bottom:1px solid #ccc">';

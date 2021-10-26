@@ -1,7 +1,7 @@
 <?php
 	$sql="select * from hieu where hieu_id=$_GET[id]"; 
-	$hieu=mysqli_query($sql);
-	$dong=mysqli_fetch_array($hieu);
+	$hieu=pg_query($PGSQL);
+	$dong=pg_fetch_array($hieu);
 ?>
 <form action="modules/hieu/xuly.php?id=<?php echo $dong['hieu_id'] ?>" method="post">
 <table width="200" border="1">

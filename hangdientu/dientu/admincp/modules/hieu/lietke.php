@@ -1,7 +1,7 @@
 <?php
 	
 	$sql="select * from hieu order by hieu_id asc ";
-	$loai=mysqli_query($sql);
+	$loai=pg_query($PGSQL);
 ?>
 <table width="268" height="124" border="1">
   <tr>
@@ -14,7 +14,7 @@
   </tr>
     <?php
    	$i=0;
-  	while($dong=mysqli_fetch_array($loai)){
+  	while($dong=pg_fetch_array($loai)){
   ?>
   <tr>
 

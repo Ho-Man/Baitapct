@@ -1,7 +1,7 @@
 <?php
-	$sql="select * from loai where loai_id=$_GET[id]"; 
-	$loai=mysqli_query($sql);
-	$dong=mysqli_fetch_array($loai);
+	$PGSQL="select * from loai where loai_id=$_GET[id]"; 
+	$loai=pg_query($PGSQL);
+	$dong=pg_fetch_array($loai);
 ?>
 <form action="modules/loai/xuly.php?id=<?php echo $dong['loai_id'] ?>" method="post">
 <table width="200" border="1">

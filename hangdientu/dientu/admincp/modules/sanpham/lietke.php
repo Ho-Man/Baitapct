@@ -1,7 +1,7 @@
 <?php
 	
-	$sql="select loai.tenloai,hieu.tenhieu,product_id,product_cat,product_brand,product_title,product_price,product_desc,product_image,product_keywords from products,loai,hieu where products.product_cat=loai_id and products.product_brand=hieu_id ";
-	$loai=mysqli_query($sql);
+	$PGSQL="select loai.tenloai,hieu.tenhieu,product_id,product_cat,product_brand,product_title,product_price,product_desc,product_image,product_keywords from products,loai,hieu where products.product_cat=loai_id and products.product_brand=hieu_id ";
+	$loai=pg_query($PGSQL);
 ?>
 <table width="300" height="124" border="1">
   <tr>
@@ -20,7 +20,7 @@
   </tr>
     <?php
    	$i=0;
-  	while($dong=mysqli_fetch_array($loai)){
+  	while($dong=pg_fetch_array($loai)){
   ?>
   <tr>
 
